@@ -51,9 +51,9 @@
 #include <asf.h>
 
 ////versions history
-// 0.1 -> inital
-#define POWER_METER_DISPLAY_VER1		0x00
-#define POWER_METER_DISPLAY_VER2		0x01
+// 1.0 -> inital
+#define POWER_METER_DISPLAY_VER1		0x01
+#define POWER_METER_DISPLAY_VER2		0x00
 
 #define EEPROM_PAGE_SCALE				1
 #define EEPROM_PAGE_BOOT				63

@@ -72,6 +72,12 @@ FILE lcd_str = FDEV_SETUP_STREAM(lcd_eadog_write_char, NULL, _FDEV_SETUP_WRITE);
 void reset_to_bootloader(void)
 {
 	udc_stop();
+	
+	lcd_eadog_set_cursor(0);
+	fprintf(stderr,"bootloader      ");
+	lcd_eadog_set_cursor(0x40);
+	fprintf(stderr,"                ");
+		
 	uint8_t temp_buf[EEPROM_PAGE_SIZE];
 	temp_buf[0]=0xB0;
 	nvm_eeprom_flush_buffer();
