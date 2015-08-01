@@ -49,10 +49,7 @@
 //! Clk sys     = 48MHZ
 //! Clk cpu/per = 12MHZ
 
-//workaround at the moment...
-//use only the internal clock source
-//so the bootloader cames up, without problems...
-//otherwise the usb bootloader cames up with a usb error
+/*
 #define CONFIG_USBCLK_SOURCE     USBCLK_SRC_RCOSC
 #define CONFIG_OSC_RC32_CAL      48000000UL
 
@@ -61,12 +58,13 @@
 #define CONFIG_SYSCLK_SOURCE     SYSCLK_SRC_RC32MHZ
 #define CONFIG_SYSCLK_PSADIV     SYSCLK_PSADIV_2
 #define CONFIG_SYSCLK_PSBCDIV    SYSCLK_PSBCDIV_1_2
+*/
 
 //! Use external board OSC (8MHZ)
 //! Clk pll     = 48MHZ (used by USB)
 //! Clk sys     = 48MHZ
 //! Clk cpu/per = 12MHZ
-/*
+
 #define CONFIG_PLL0_SOURCE       PLL_SRC_XOSC
 #define CONFIG_PLL0_MUL          6
 #define CONFIG_PLL0_DIV          1
@@ -74,8 +72,8 @@
 #define CONFIG_USBCLK_SOURCE     USBCLK_SRC_PLL
 
 #define CONFIG_SYSCLK_SOURCE     SYSCLK_SRC_PLL
-#define CONFIG_SYSCLK_PSADIV     SYSCLK_PSADIV_2
+#define CONFIG_SYSCLK_PSADIV     SYSCLK_PSADIV_1
 #define CONFIG_SYSCLK_PSBCDIV    SYSCLK_PSBCDIV_1_2
-*/
+
 
 #endif /* CONF_CLOCK_H_INCLUDED */

@@ -51,11 +51,17 @@
 #include <asf.h>
 
 ////versions history
-// 1.0 -> inital
-#define POWER_METER_DISPLAY_VER1		0x01
-#define POWER_METER_DISPLAY_VER2		0x00
+/* 
+1.0 
+	- initial
+1.1
+	- run at 24 MHz
+	- run with 8 MHz crystal
+	- fix bootloader workaround 
+*/
+#define POWER_METER_DISPLAY_VER1		1
+#define POWER_METER_DISPLAY_VER2		1
 
-#define EEPROM_PAGE_SCALE				1
 #define EEPROM_PAGE_BOOT				63
 
 extern void reset_to_bootloader(void);

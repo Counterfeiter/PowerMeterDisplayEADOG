@@ -131,12 +131,6 @@ int main(void)
 		
 	irq_initialize_vectors();
 	cpu_irq_enable();
-
-	// Initialize the sleep manager
-	sleepmgr_init();
-
-	sysclk_init();
-	
 	
 	//should we start the bootloader???
 	if(nvm_eeprom_read_byte(EEPROM_PAGE_BOOT * EEPROM_PAGE_SIZE)==0xB0) {
@@ -147,6 +141,11 @@ int main(void)
 		nvm_eeprom_atomic_write_page(EEPROM_PAGE_BOOT);
 		start_bootloader();
 	}
+
+	// Initialize the sleep manager
+	sleepmgr_init();
+
+	sysclk_init();
 		
 	board_init();
 	
@@ -176,14 +175,6 @@ int main(void)
 	
 	// Start USB stack
 	udc_start();
-	
-	//check if eeprom erased
-	if(ee_scale_settings.opt_v == 0xFF) {
-		
-		nvm_eeprom_flush_buffer();
-		nvm_eeprom_load_page_to_buffer((const uint8_t*)&ee_scale_settings);
-		nvm_eeprom_atomic_write_page(EEPROM_PAGE_SCALE);
-	}
 	
 	uint8_t menu_counter = 0;
 	uint8_t display = 0;

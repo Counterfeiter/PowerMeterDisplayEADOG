@@ -66,7 +66,7 @@
 
 //! USB Device string definitions (Optional)
 #define  USB_DEVICE_MANUFACTURE_NAME      "S Foerster"
-#define  USB_DEVICE_PRODUCT_NAME          "PowerMeter"
+#define  USB_DEVICE_PRODUCT_NAME          "PowerMeter EADOG Display"
 // #define  USB_DEVICE_SERIAL_NAME           "12...EF"
 
 /**
